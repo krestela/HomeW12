@@ -1,6 +1,6 @@
 
 public class Author {
-    private final String name;
+    private String name;
     private String secondName;
 
     public Author(String name, String secondName) {
@@ -18,7 +18,7 @@ public class Author {
 
         return name;
     }
-
+    @Override
     public boolean equals(Object other) {
         if (this.getClass() == other.getClass()) {
             return false;
@@ -26,12 +26,13 @@ public class Author {
         Author c2 = (Author) other;
         return name.equals(c2.name);
     }
-
+    @Override
     public int hashCode() {
         return java.util.Objects.hash(name);
     }
-
+    @Override
     public String toString() {
-        return this.name + " " + this.secondName;
-    }
+        return this.name + " " + this.secondName;}
+     Author a = new Author("Donna", "Tarrt");
+
 }
